@@ -1,0 +1,54 @@
+# Build output
+build/
+dist/
+out/
+
+# Dependencies
+node_modules/
+
+# Testing coverage
+coverage/
+
+# Environment files
+.env
+.env.* 
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Static assets
+public/
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.webp
+*.ico
+*.gif
+
+# Fonts
+*.woff
+*.woff2
+*.eot
+*.ttf
+*.otf
+
+# Minified files
+*.min.js
+*.min.css
+
+# Generated files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE settings
+.vscode/
+.idea/
+
+# Misc
+*.log
+
+# Optional: skip formatting storybook static files
+storybook-static/
