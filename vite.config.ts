@@ -13,4 +13,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    host: '0.0.0.0', // allow external connections
+    port: 5173, // default Vite port (optional)
+    strictPort: true, // don't try other ports if 5173 is taken
+  },
 });

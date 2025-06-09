@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import Map from '@/components/map/Map';
 
-// belgrade geocode
-const DEFAULT_GEOCODE: [number, number] = [44.8125, 20.4612];
+// serbia geocode
+const DEFAULT_GEOCODE: [number, number] = [44.0165, 21.0059];
 
 const Home = () => {
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
+  const [zoom, setZoom] = useState<number>(7);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -13,6 +14,7 @@ const Home = () => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           setUserLocation([position.coords.latitude, position.coords.longitude]);
+          setZoom(11);
           setIsLoading(false);
         },
         (error) => {
@@ -28,7 +30,7 @@ const Home = () => {
       );
     } else {
       console.error('geolocation is not supported by this browser');
-      // fallback to belgrade coordinates
+      // fallback to serbia coordinates
       setUserLocation(DEFAULT_GEOCODE);
       setIsLoading(false);
     }
@@ -38,7 +40,7 @@ const Home = () => {
     return <div>loading map...</div>;
   }
 
-  return <Map center={userLocation} />;
+  return <Map center={userLocation} zoom={zoom} />;
 };
 
 export default Home;

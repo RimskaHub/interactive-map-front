@@ -11,6 +11,7 @@ interface CustomCluster {
 }
 interface MapProps {
   center: [number, number];
+  zoom: number;
 }
 
 // mock api response for locations
@@ -46,9 +47,9 @@ const createClusterCustomIcon = (cluster: CustomCluster) => {
   });
 };
 
-const Map = ({ center }: MapProps) => {
+const Map = ({ center, zoom }: MapProps) => {
   return (
-    <MapContainer center={center} zoom={13} scrollWheelZoom={true}>
+    <MapContainer center={center} zoom={zoom} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
