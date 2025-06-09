@@ -6,6 +6,13 @@ import { IoLocation } from 'react-icons/io5';
 
 import 'leaflet/dist/leaflet.css';
 
+interface CustomCluster {
+  getChildCount: () => number;
+}
+interface MapProps {
+  center: [number, number];
+}
+
 // mock api response for locations
 const mockMarkers: { geocode: [number, number]; popupText: string }[] = [
   {
@@ -31,9 +38,6 @@ const customIcon = divIcon({
 });
 
 // custom cluster icon
-interface CustomCluster {
-  getChildCount: () => number;
-}
 const createClusterCustomIcon = (cluster: CustomCluster) => {
   return divIcon({
     html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
@@ -42,9 +46,9 @@ const createClusterCustomIcon = (cluster: CustomCluster) => {
   });
 };
 
-const Map = () => {
+const Map = ({ center }: MapProps) => {
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+    <MapContainer center={center} zoom={13} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
