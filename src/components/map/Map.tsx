@@ -1,6 +1,7 @@
 import { renderToString } from 'react-dom/server';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-import { divIcon } from 'leaflet';
+import MarkerClusterGroup from 'react-leaflet-cluster';
+import { divIcon, point } from 'leaflet';
 import { IoLocation } from 'react-icons/io5';
 
 import 'leaflet/dist/leaflet.css';
@@ -20,6 +21,8 @@ const mockMarkers: { geocode: [number, number]; popupText: string }[] = [
     popupText: 'Buckingham Palace - Official residence of the British Royal Family',
   },
 ];
+
+// transforming react in leaflet icon
 const customIcon = divIcon({
   html: renderToString(<IoLocation size={30} color="var(--clr-slate-600)" />),
   className: 'custom-div-icon',
@@ -27,21 +30,35 @@ const customIcon = divIcon({
   iconAnchor: [15, 30],
 });
 
+// custom cluster icon
+interface CustomCluster {
+  getChildCount: () => number;
+}
+const createClusterCustomIcon = (cluster: CustomCluster) => {
+  return divIcon({
+    html: `<span class="cluster-icon">${cluster.getChildCount()}</span>`,
+    className: 'custom-marker-cluster',
+    iconSize: point(33, 33, true),
+  });
+};
+
 const Map = () => {
   return (
-    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
 
-      {mockMarkers.map((marker) => {
-        return (
-          <Marker position={marker.geocode} icon={customIcon}>
-            <Popup>{marker.popupText}</Popup>
-          </Marker>
-        );
-      })}
+      <MarkerClusterGroup chunkedLoading iconCreateFunction={createClusterCustomIcon}>
+        {mockMarkers.map((marker) => {
+          return (
+            <Marker key={marker.popupText} position={marker.geocode} icon={customIcon}>
+              <Popup>{marker.popupText}</Popup>
+            </Marker>
+          );
+        })}
+      </MarkerClusterGroup>
     </MapContainer>
   );
 };
