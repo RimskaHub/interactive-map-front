@@ -32,10 +32,12 @@ export default tseslint.config(
       ...react.configs.recommended.rules,
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'prettier/prettier': 'error',
+      'react/react-in-jsx-scope': 'off',
     },
     settings: {
       react: {
         version: 'detect',
+        runtime: 'automatic',
       },
     },
   },
