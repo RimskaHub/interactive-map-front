@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Map from '@/components/map/Map';
+import MainLayout from '@/layouts/MainLayout';
 
 // serbia geocode
 const DEFAULT_GEOCODE: [number, number] = [44.0165, 21.0059];
@@ -40,7 +41,11 @@ const Home = () => {
     return <div>loading map...</div>;
   }
 
-  return <Map center={userLocation} zoom={zoom} />;
+  return (
+    <MainLayout>
+      <Map center={userLocation} zoom={zoom} />;
+    </MainLayout>
+  );
 };
 
 export default Home;
