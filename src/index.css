@@ -209,22 +209,38 @@
 }
 
 @layer mui-components {
-  /* MUI focused input styles */
   .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: var(--clr-slate-800) !important;
   }
 
-  /* Reduce input padding */
   .MuiOutlinedInput-input {
     padding: 8px 14px !important;
   }
 
-  /* Label color (default and focused) */
   .MuiInputLabel-root {
     color: var(--clr-slate-600) !important;
   }
 
   .MuiInputLabel-root.Mui-focused {
     color: var(--clr-slate-800) !important;
+  }
+
+  .MuiPickersToolbar-root {
+    background-color: 'inherit' !important;
+  }
+
+  .MuiPickersOutlinedInput {
+    color: var(--clr-slate-600);
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: var(--clr-slate-600);
+    border: 1px solid var(--clr-slate-600);
+  }
+  .MuiPickersOutlinedInput-root.Mui-focused .MuiPickersOutlinedInput-notchedOutline {
+    border-color: var(--clr-brand-800) !important;
+  }
+
+  .MuiPickersOutlinedInput-root:hover .MuiPickersOutlinedInput-notchedOutline {
+    border-color: var(--clr-slate-800) !important;
   }
 }

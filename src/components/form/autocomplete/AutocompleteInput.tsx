@@ -66,7 +66,6 @@ const AutocompleteInput = ({ onChange }: IAutocompleteInputProps) => {
           {...props}
           key={option.title}
           style={{
-            ...props.style,
             borderBottom: index === 0 ? '1px solid var(--clr-slate-400)' : 'none',
             paddingBottom: index === 0 ? '8px' : '6px',
             marginBottom: index === 0 ? '4px' : '0',
