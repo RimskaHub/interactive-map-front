@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import AutocompleteInput from '@/components/form/autocomplete/AutocompleteInput';
 
 const pages = ['Whishlist', 'Forum', 'Cart', 'Bookings'];
 const settings = ['Profile', 'Pricing', 'Logout'];
@@ -98,27 +99,9 @@ const Navbar = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'var(--ff-heading)',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'var(--clr-slate-600)',
-              textDecoration: 'none',
-              '&:hover': {
-                color: 'white',
-              },
-            }}
-          >
-            RimskaHub
-          </Typography>
+
+          {/* AUTOCOMPLETE INPUT */}
+          <AutocompleteInput />
 
           {/* TABLET MENU */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -134,7 +117,7 @@ const Navbar = () => {
           </Box>
 
           {/* USER SETTINGS */}
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, ml: 2 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Rimska Hub" />

@@ -207,3 +207,24 @@
     box-shadow: 0 0 0px 5px #fff;
   }
 }
+
+@layer mui-components {
+  /* MUI focused input styles */
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--clr-slate-800) !important;
+  }
+
+  /* Reduce input padding */
+  .MuiOutlinedInput-input {
+    padding: 8px 14px !important;
+  }
+
+  /* Label color (default and focused) */
+  .MuiInputLabel-root {
+    color: var(--clr-slate-600) !important;
+  }
+
+  .MuiInputLabel-root.Mui-focused {
+    color: var(--clr-slate-800) !important;
+  }
+}
