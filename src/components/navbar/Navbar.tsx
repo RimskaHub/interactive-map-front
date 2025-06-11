@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,7 +12,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+
 import AutocompleteInput from '@/components/form/autocomplete/AutocompleteInput';
+
+import type { IRecentSearch } from '@/types';
 
 const pages = ['Whishlist', 'Forum', 'Cart', 'Bookings'];
 const settings = ['Profile', 'Pricing', 'Logout'];
@@ -22,6 +26,11 @@ const isLogged = false;
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [autocompleteValue, setAutocompleteValue] = useState<IRecentSearch | null>(null);
+
+  const getAutocompleteValue = (_event: any, newValue: IRecentSearch | null) => {
+    setAutocompleteValue(newValue);
+  };
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -101,10 +110,12 @@ const Navbar = () => {
           </Box>
 
           {/* AUTOCOMPLETE INPUT */}
-          <AutocompleteInput />
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <AutocompleteInput onChange={getAutocompleteValue} />
+          </Box>
 
-          {/* TABLET MENU */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          {/* DESKTOP MENU */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: 2 }}>
             {pages.map((page) => (
               <Button
                 key={page}

@@ -25,7 +25,11 @@ const mockRecentSearch = [
   { title: 'Kragujevac' },
 ];
 
-const AutocompleteInput = () => {
+interface IAutocompleteInputProps {
+  onChange: (_event: any, newValue: any) => void;
+}
+
+const AutocompleteInput = ({ onChange }: IAutocompleteInputProps) => {
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<readonly IRecentSearch[]>([]);
   const [loading, setLoading] = useState(false);
@@ -52,6 +56,7 @@ const AutocompleteInput = () => {
       open={open}
       onOpen={handleOpen}
       onClose={handleClose}
+      onChange={onChange}
       isOptionEqualToValue={(option, value) => option.title === value.title}
       getOptionLabel={(option) => option.title}
       options={[{ title: 'Pronadji najblize mesto' }, ...options]}
@@ -59,6 +64,7 @@ const AutocompleteInput = () => {
       renderOption={(props, option, { index }) => (
         <li
           {...props}
+          key={option.title}
           style={{
             ...props.style,
             borderBottom: index === 0 ? '1px solid var(--clr-slate-400)' : 'none',
