@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import dayjs from 'dayjs';
 
 import { Drawer, Button, Box } from '@mui/material';
@@ -23,6 +24,8 @@ const SearchDrawer = () => {
     dayjs().add(1, 'day').format('YYYY/MM/DD'),
   );
 
+  const navigate = useNavigate();
+
   const getAutocompleteValue = (_event: any, newValue: IRecentSearch | null) => {
     setAutocompleteValue(newValue);
   };
@@ -46,6 +49,7 @@ const SearchDrawer = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     toggleOpen();
+    navigate('/omnisearch');
   };
 
   return (

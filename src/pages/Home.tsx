@@ -1,6 +1,8 @@
-import Map from '@/components/map/Map';
 import MainLayout from '@/layouts/MainLayout';
+
 import useUserGeolocation from '@/hooks/useUserGeolocation';
+
+import { Box } from '@mui/material';
 
 const Home = () => {
   const { userLocation, isLoading, error } = useUserGeolocation();
@@ -15,7 +17,15 @@ const Home = () => {
 
   return (
     <MainLayout>
-      <Map center={userLocation} />
+      <Box
+        sx={{
+          minHeight: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        LANDING PAGE
+      </Box>
     </MainLayout>
   );
 };

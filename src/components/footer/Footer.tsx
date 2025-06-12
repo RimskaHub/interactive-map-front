@@ -23,7 +23,7 @@ export const Footer = () => {
         mt: 'auto',
       }}
     >
-      <Container>
+      <Container maxWidth="xl">
         <Box
           sx={{
             display: 'flex',
