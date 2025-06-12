@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import dayjs from 'dayjs';
 
 import { Drawer, Button, Box } from '@mui/material';

@@ -11,22 +11,43 @@ interface CustomCluster {
 }
 interface MapProps {
   center: [number, number];
-  zoom: number;
 }
 
 // mock api response for locations
 const mockMarkers: { geocode: [number, number]; popupText: string }[] = [
   {
-    geocode: [51.505, -0.09],
-    popupText: 'London Eye - Famous observation wheel offering panoramic views of London',
+    geocode: [44.7866, 20.4489],
+    popupText:
+      'Beogradska tvrđava - Istorijska tvrđava i park koji se nadovezuje nad ušćem Save i Dunava',
   },
   {
-    geocode: [51.509, -0.118],
-    popupText: 'Big Ben - Iconic clock tower and symbol of London',
+    geocode: [44.8176, 20.4633],
+    popupText: 'Trg Republike - Centralni trg sa Narodnim muzejom i Narodnim pozorištem',
   },
   {
-    geocode: [51.501, -0.142],
-    popupText: 'Buckingham Palace - Official residence of the British Royal Family',
+    geocode: [44.8043, 20.4632],
+    popupText: 'Skadarlija - Bohemska četvrt poznata kao beogradski Monmartr',
+  },
+  {
+    geocode: [43.3209, 21.8958],
+    popupText: 'Niška Tvrđava - Dobro očuvana osmanska tvrđava u gradu Nišu',
+  },
+  {
+    geocode: [45.2671, 19.8335],
+    popupText: 'Novi Sad - Dunavski park i Petrovaradinska tvrđava, kulturna prestonica Vojvodine',
+  },
+  {
+    geocode: [43.8563, 19.3061],
+    popupText:
+      'Zlatibor - Planinska odmorišna mesta poznata po livadama, tradicionalnoj arhitekturi i čistom vazduhu',
+  },
+  {
+    geocode: [43.7695, 19.2935],
+    popupText: 'Mokra Gora - Selo poznato po železnici Šarganska osmica i drvenom gradu Drvengrad',
+  },
+  {
+    geocode: [44.0128, 21.3362],
+    popupText: 'Oplenac - Kraljevski mauzolej i vinogradi u Topoli',
   },
 ];
 
@@ -47,9 +68,9 @@ const createClusterCustomIcon = (cluster: CustomCluster) => {
   });
 };
 
-const Map = ({ center, zoom }: MapProps) => {
+const Map = ({ center }: MapProps) => {
   return (
-    <MapContainer center={center} zoom={zoom} scrollWheelZoom={true}>
+    <MapContainer center={center} zoom={10} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
