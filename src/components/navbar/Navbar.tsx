@@ -81,17 +81,17 @@ const Navbar = () => {
               fontFamily: 'var(--ff-heading), monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'var(--clr-slate-600)',
+              color: 'white',
               textDecoration: 'none',
               '&:hover': {
-                color: 'white',
+                color: 'var(--clr-slate-600)',
               },
             }}
           >
             RimskaHub
           </Typography>
 
-          {/* MOBILE BURGER MENU AND LOGO */}
+          {/* MOBILE BURGER MENU */}
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -124,8 +124,10 @@ const Navbar = () => {
                 return (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <IconComponent size={20} />
-                      <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                      <IconComponent size={20} color="var(--clr-slate-600)" />
+                      <Typography sx={{ textAlign: 'center', color: 'var(--clr-slate-600)' }}>
+                        {page}
+                      </Typography>
                     </Box>
                   </MenuItem>
                 );
@@ -142,6 +144,9 @@ const Navbar = () => {
               display: 'flex',
               justifyContent: 'left',
               fontSize: { xs: '14px', sm: 'inherit' },
+              '&:hover': {
+                color: 'var(--clr-slate-600)',
+              },
             }}
           >
             <Box
@@ -175,6 +180,9 @@ const Navbar = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1,
+                    '&:hover': {
+                      color: 'var(--clr-slate-600)',
+                    },
                   }}
                 >
                   <IconComponent size={20} />
@@ -213,15 +221,19 @@ const Navbar = () => {
                   return (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <IconComponent size={20} />
-                        <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+                        <IconComponent size={20} color="var(--clr-slate-600)" />
+                        <Typography sx={{ textAlign: 'center', color: 'var(--clr-slate-600)' }}>
+                          {setting}
+                        </Typography>
                       </Box>
                     </MenuItem>
                   );
                 })
               ) : (
                 <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>Uloguj se ili se prijavi</Typography>
+                  <Typography sx={{ textAlign: 'center', color: 'var(--clr-slate-600)' }}>
+                    Uloguj se ili se prijavi
+                  </Typography>
                 </MenuItem>
               )}
             </Menu>

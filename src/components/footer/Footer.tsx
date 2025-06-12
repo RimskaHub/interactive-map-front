@@ -50,8 +50,8 @@ export const Footer = () => {
                 lineHeight: 1.5,
               }}
             >
-              Interaktivna kartografska rešenja za moderne aplikacije. Istražujte, navigirajte i
-              otkrivajte sa našom moćnom platformom za mapiranje.
+              Interaktivna kartografska aplikacija. Istražujte, navigirajte i otkrivajte sa našom
+              moćnom platformom za mapiranje.
             </Typography>
             <Box
               sx={{
@@ -107,7 +107,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -121,7 +121,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -135,7 +135,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -149,7 +149,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -182,7 +182,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -196,7 +196,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -210,7 +210,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -224,7 +224,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-400)',
+                      color: 'var(--clr-slate-600)',
                     },
                   }}
                 >
@@ -355,7 +355,7 @@ export const Footer = () => {
                 fontSize: { xs: '0.875rem', sm: '1rem' },
                 color: 'white',
                 '&:hover': {
-                  color: 'var(--clr-slate-400)',
+                  color: 'var(--clr-slate-600)',
                 },
               }}
             >
@@ -369,7 +369,7 @@ export const Footer = () => {
                 fontSize: { xs: '0.875rem', sm: '1rem' },
                 color: 'white',
                 '&:hover': {
-                  color: 'var(--clr-slate-400)',
+                  color: 'var(--clr-slate-600)',
                 },
               }}
             >
@@ -383,7 +383,7 @@ export const Footer = () => {
                 fontSize: { xs: '0.875rem', sm: '1rem' },
                 color: 'white',
                 '&:hover': {
-                  color: 'var(--clr-slate-400)',
+                  color: 'var(--clr-slate-600)',
                 },
               }}
             >
