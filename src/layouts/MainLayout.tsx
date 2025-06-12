@@ -1,4 +1,5 @@
 import Navbar from '@/components/navbar/Navbar';
+import { Footer } from '@/components/footer/Footer';
 import SearchDrawer from '@/components/search-drawer/SearchDrawer';
 
 const MainLayout = ({ children }: any) => {
@@ -6,7 +7,7 @@ const MainLayout = ({ children }: any) => {
     <>
       <Navbar />
       <main>{children}</main>
-      <footer>bla</footer>
+      <Footer />
       <SearchDrawer />
     </>
   );

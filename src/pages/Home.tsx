@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <MainLayout>
-      <Map center={userLocation} />;
+      <Map center={userLocation} />
     </MainLayout>
   );
 };
