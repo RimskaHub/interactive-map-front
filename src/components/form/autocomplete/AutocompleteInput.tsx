@@ -19,10 +19,30 @@ function sleep(duration: number): Promise<void> {
 
 // mock recent search
 const mockRecentSearch = [
-  { title: 'Belgrade' },
-  { title: 'Novi Sad' },
-  { title: 'Niš' },
-  { title: 'Kragujevac' },
+  {
+    title: 'Belgrade',
+    latitude: 44.7866,
+    longitude: 20.4489,
+    country: 'Serbia',
+  },
+  {
+    title: 'Novi Sad',
+    latitude: 45.2671,
+    longitude: 19.8335,
+    country: 'Serbia',
+  },
+  {
+    title: 'Niš',
+    latitude: 43.3209,
+    longitude: 21.8958,
+    country: 'Serbia',
+  },
+  {
+    title: 'Kragujevac',
+    latitude: 44.0165,
+    longitude: 20.9114,
+    country: 'Serbia',
+  },
 ];
 
 interface IAutocompleteInputProps {

@@ -15,15 +15,13 @@ import { useSearchDrawerContext } from '@/contexts/SearchDrawerContext';
 
 const SearchDrawer = () => {
   const { open, toggleOpen } = useSearchDrawerContext();
-  const [autocompleteValue, setAutocompleteValue] = useState<IRecentSearch | null>(null);
+  const [autocompleteValue, setAutocompleteValue] = useState<
+    IRecentSearch | null | Pick<IRecentSearch, 'title'>
+  >(null);
   const [selectedStartDate, setSelectedStartDate] = useState<string>(dayjs().format('YYYY/MM/DD'));
   const [selectedEndDate, setSelectedEndDate] = useState<string>(
     dayjs().add(1, 'day').format('YYYY/MM/DD'),
   );
-
-  useEffect(() => {
-    console.log(autocompleteValue, selectedStartDate, selectedEndDate);
-  }, [autocompleteValue, selectedStartDate, selectedEndDate]);
 
   const getAutocompleteValue = (_event: any, newValue: IRecentSearch | null) => {
     setAutocompleteValue(newValue);
