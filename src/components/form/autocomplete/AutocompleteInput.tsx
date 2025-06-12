@@ -52,7 +52,7 @@ const AutocompleteInput = ({ onChange }: IAutocompleteInputProps) => {
 
   return (
     <Autocomplete
-      sx={{ width: 300 }}
+      sx={{ width: '100%' }}
       open={open}
       onOpen={handleOpen}
       onClose={handleClose}

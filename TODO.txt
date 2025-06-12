@@ -1,0 +1,1 @@
+promeniti autocomplete komponentu da bude reusable (trenutno je demo za prikaz recent search-a i nearby place)

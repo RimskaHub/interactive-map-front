@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import dayjs from 'dayjs';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -13,22 +12,23 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DesktopDatePicker } from '@mui/x-date-pickers';
-import type { PickerValue } from '@mui/x-date-pickers/internals';
 
-import { FaHeart, FaComments, FaShoppingCart, FaCalendarCheck } from 'react-icons/fa';
-import { FaUser, FaCreditCard, FaSignOutAlt } from 'react-icons/fa';
+import {
+  FaHeart,
+  FaComments,
+  FaShoppingCart,
+  FaCalendarCheck,
+  FaSearch,
+  FaUser,
+  FaCreditCard,
+  FaSignOutAlt,
+} from 'react-icons/fa';
 
-import AutocompleteInput from '@/components/form/autocomplete/AutocompleteInput';
-
-import type { IRecentSearch } from '@/types/index';
+import { useSearchDrawerContext } from '@/contexts/SearchDrawerContext';
 
 const pages = ['Lista Zelja', 'Forum', 'Korpa', 'Rezervacije'];
 const settings = ['Profil', 'Placanje', 'Odjavi se'];
 
-// Mapirajte stringove sa ikonama
 const pageIcons = {
   'Lista Zelja': FaHeart,
   Forum: FaComments,
@@ -48,21 +48,7 @@ const isLogged = true;
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
-  const [autocompleteValue, setAutocompleteValue] = useState<IRecentSearch | null>(null);
-  const [selectedDate, setSelectedDate] = useState<string>(dayjs().format('YYYY/MM/DD'));
-
-  const getAutocompleteValue = (_event: any, newValue: IRecentSearch | null) => {
-    setAutocompleteValue(newValue);
-    console.log(autocompleteValue);
-  };
-
-  const getSelectedDate = (newValue: PickerValue) => {
-    if (newValue && dayjs(newValue).isValid()) {
-      setSelectedDate(dayjs(newValue).format('YYYY/MM/DD'));
-    } else {
-      setSelectedDate(dayjs().format('YYYY/MM/DD'));
-    }
-  };
+  const { toggleOpen } = useSearchDrawerContext();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -106,7 +92,7 @@ const Navbar = () => {
           </Typography>
 
           {/* MOBILE BURGER MENU AND LOGO */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -147,28 +133,36 @@ const Navbar = () => {
             </Menu>
           </Box>
 
-          {/* AUTOCOMPLETE AND DATEPICKER INPUT */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
-            <AutocompleteInput onChange={getAutocompleteValue} />
-            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="sr">
-              <DesktopDatePicker
-                sx={{
-                  '.MuiPickersSectionList-root': {
-                    padding: '8px 0',
-                  },
-                  '.MuiInputAdornment-root .MuiSvgIcon-root': {
-                    color: 'var(--clr-slate-600)',
-                  },
-                }}
-                disablePast
-                value={dayjs(selectedDate)}
-                onChange={getSelectedDate}
-              />
-            </LocalizationProvider>
-          </Box>
+          {/* OPEN DRAWER BUTTON */}
+          <Button
+            onClick={toggleOpen}
+            sx={{
+              my: 2,
+              color: 'white',
+              display: 'flex',
+              justifyContent: 'left',
+              fontSize: { xs: '14px', sm: 'inherit' },
+            }}
+          >
+            <Box
+              component={FaSearch}
+              sx={{
+                fontSize: { xs: '15px', sm: '20px' },
+                marginRight: '4px',
+              }}
+            />
+            Pretrazi
+          </Button>
 
           {/* DESKTOP MENU */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, marginLeft: 2 }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'right',
+              marginLeft: 2,
+            }}
+          >
             {pages.map((page) => {
               const IconComponent = pageIcons[page as keyof typeof pageIcons];
               return (
@@ -191,7 +185,7 @@ const Navbar = () => {
           </Box>
 
           {/* USER SETTINGS */}
-          <Box sx={{ flexGrow: 0, ml: 2 }}>
+          <Box sx={{ flexGrow: 0, ml: 'auto' }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Rimska Hub" />
