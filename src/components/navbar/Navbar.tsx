@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -48,7 +48,18 @@ const isLogged = true;
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { toggleOpen } = useSearchDrawerContext();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 50); // Menja boju nakon 50px skrola
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -66,7 +77,15 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: 'var(--clr-brand-500)' }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        backgroundColor: isScrolled ? 'var(--clr-brand-500)' : 'transparent',
+        transition: 'background-color 0.3s ease',
+        backdropFilter: isScrolled ? 'none' : 'blur(10px)',
+        boxShadow: isScrolled ? 'var(--shadow-2)' : 'none',
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* DESKTOP LOGO */}
