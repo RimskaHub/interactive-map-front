@@ -1,4 +1,4 @@
-import { Box, Typography, Grid } from '@mui/material';
+import { Typography, Grid, Container } from '@mui/material';
 
 import DestinationCard from '@/components/landing-page/destination-cards/destination-card/DestinationCard';
 
@@ -42,7 +42,7 @@ const mockDestinations = [
 
 const DestinationCards = () => {
   return (
-    <Box sx={{ padding: 4, margin: 'auto' }} maxWidth="xl">
+    <Container sx={{ paddingBlock: 4 }} maxWidth="xl">
       <Typography
         variant="h4"
         component="h4"
@@ -67,7 +67,7 @@ const DestinationCards = () => {
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </Container>
   );
 };
 

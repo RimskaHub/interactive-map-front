@@ -113,7 +113,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            RimskaHub
+            Omnimap
           </Typography>
 
           {/* MOBILE BURGER MENU */}
