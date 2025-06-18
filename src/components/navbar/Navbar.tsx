@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { useLocation } from 'react-router';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -51,10 +53,12 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { toggleOpen } = useSearchDrawerContext();
 
+  const location = useLocation();
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 50); // Menja boju nakon 50px skrola
+      setIsScrolled(scrollTop > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -80,7 +84,12 @@ const Navbar = () => {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: isScrolled ? 'var(--clr-green-500)' : 'transparent',
+        backgroundColor:
+          location.pathname === '/'
+            ? isScrolled
+              ? 'var(--clr-green-500)'
+              : 'transparent'
+            : 'var(--clr-green-500)',
         transition: 'background-color 0.3s ease',
         backdropFilter: isScrolled ? 'none' : 'blur(10px)',
         boxShadow: isScrolled ? 2 : 'none',
@@ -140,8 +149,8 @@ const Navbar = () => {
                 return (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <IconComponent size={20} color="var(--clr-green-500)" />
-                      <Typography sx={{ textAlign: 'center', color: 'var(--clr-green-500)' }}>
+                      <IconComponent size={20} color="var(--clr-green-700)" />
+                      <Typography sx={{ textAlign: 'center', color: 'var(--clr-green-700)' }}>
                         {page}
                       </Typography>
                     </Box>
@@ -156,7 +165,7 @@ const Navbar = () => {
             onClick={toggleOpen}
             sx={{
               my: 2,
-              color: 'white',
+              color: 'var(--clr-white)',
               display: 'flex',
               justifyContent: 'left',
               fontSize: { xs: '14px', sm: 'inherit' },
@@ -189,7 +198,7 @@ const Navbar = () => {
                   onClick={handleCloseNavMenu}
                   sx={{
                     my: 2,
-                    color: 'white',
+                    color: 'var(--clr-white)',
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1,
