@@ -3,7 +3,7 @@ import DestinationCards from '@/components/landing-page/destination-cards/Destin
 import MarketingSection from '@/components/landing-page/marketing-section/MarketingSection';
 import MainLayout from '@/layouts/MainLayout';
 
-const mockDestinations = [
+const mockNearDestinations = [
   {
     cityName: 'Beograd',
     backgroundImage:
@@ -40,13 +40,59 @@ const mockDestinations = [
     trailCount: 15,
   },
 ];
+const mockTopRatedDestinations = [
+  {
+    cityName: 'Tara',
+    backgroundImage:
+      'https://images.unsplash.com/photo-1635414730014-817f1a89b01a?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    trailCount: 22,
+  },
+  {
+    cityName: 'Kopaonik',
+    backgroundImage:
+      'https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    trailCount: 18,
+  },
+  {
+    cityName: 'Đerdap',
+    backgroundImage:
+      'https://images.unsplash.com/photo-1592857202167-38be503da512?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    trailCount: 14,
+  },
+  {
+    cityName: 'Divčibare',
+    backgroundImage:
+      'https://images.unsplash.com/photo-1607234591335-3ebee22bd2b4?q=80&w=1265&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    trailCount: 11,
+  },
+  {
+    cityName: 'Golija',
+    backgroundImage:
+      'https://www.gdeputovati.rs/img/upload/mid/2402/vidikovac-srna-izubrafoto-janko-1.jpg',
+    trailCount: 9,
+  },
+  {
+    cityName: 'Šar planina',
+    backgroundImage:
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    trailCount: 13,
+  },
+];
 
+// Ovo moze biti prikaz landing page-a i prikaza destinacija za usera koji spada u kategoriju planinarenja
 const Home = () => {
   return (
     <MainLayout>
       <HeroSection />
-      <DestinationCards destinations={mockDestinations} />
+      <DestinationCards
+        destinations={mockNearDestinations}
+        title="Istražite mesta u Vašoj okolini"
+      />
       <MarketingSection />
+      <DestinationCards
+        destinations={mockTopRatedDestinations}
+        title="Najbolje ocenjena mesta za planinarenje"
+      />
     </MainLayout>
   );
 };

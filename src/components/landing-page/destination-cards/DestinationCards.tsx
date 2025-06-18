@@ -6,9 +6,10 @@ import DestinationCard, {
 
 interface IDestinations {
   destinations: DestinationCardProps[];
+  title: string;
 }
 
-const DestinationCards = ({ destinations }: IDestinations) => {
+const DestinationCards = ({ destinations, title }: IDestinations) => {
   return (
     <Container sx={{ paddingBlock: 4 }} maxWidth="xl">
       <Typography
@@ -21,7 +22,7 @@ const DestinationCards = ({ destinations }: IDestinations) => {
           fontSize: { xs: 'var(--font-size-heading-sm)' },
         }}
       >
-        Istražite mesta u vašoj blizini
+        {title}
       </Typography>
 
       <Grid container spacing={3}>
