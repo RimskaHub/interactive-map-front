@@ -167,34 +167,20 @@
   }
 
   html {
-    font-family: var(--ff-body);
-    line-height: 1.6;
+    font-family: var(--ff-body) !important;
+    line-height: 1.6 !important;
   }
 
   body {
-    font-size: var(--font-size-regular);
-    color: var(--text-main);
+    font-size: var(--font-size-regular) !important;
+    color: var(--text-main) !important;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    font-family: var(--ff-heading);
-    color: var(--clr-white);
-  }
-
-  h1 {
-    font-size: var(--font-size-heading-lg);
-  }
-
-  a {
-    color: var(--clr-blue-500);
-  }
-
-  a:hover,
-  a:focus-visible {
-    color: var(--clr-blue-400);
+    font-family: var(--ff-heading) !important;
   }
 }
 
