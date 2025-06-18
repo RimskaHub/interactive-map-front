@@ -80,10 +80,10 @@ const Navbar = () => {
     <AppBar
       position="fixed"
       sx={{
-        backgroundColor: isScrolled ? 'var(--clr-brand-500)' : 'transparent',
+        backgroundColor: isScrolled ? 'var(--clr-green-500)' : 'transparent',
         transition: 'background-color 0.3s ease',
         backdropFilter: isScrolled ? 'none' : 'blur(10px)',
-        boxShadow: isScrolled ? 'var(--shadow-2)' : 'none',
+        boxShadow: isScrolled ? 2 : 'none',
       }}
     >
       <Container maxWidth="xl">
@@ -100,11 +100,8 @@ const Navbar = () => {
               fontFamily: 'var(--ff-heading), monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'white',
+              color: 'var(--clr-white)',
               textDecoration: 'none',
-              '&:hover': {
-                color: 'var(--clr-slate-600)',
-              },
             }}
           >
             RimskaHub
@@ -143,8 +140,8 @@ const Navbar = () => {
                 return (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <IconComponent size={20} color="var(--clr-slate-600)" />
-                      <Typography sx={{ textAlign: 'center', color: 'var(--clr-slate-600)' }}>
+                      <IconComponent size={20} color="var(--clr-green-500)" />
+                      <Typography sx={{ textAlign: 'center', color: 'var(--clr-green-500)' }}>
                         {page}
                       </Typography>
                     </Box>
@@ -163,9 +160,6 @@ const Navbar = () => {
               display: 'flex',
               justifyContent: 'left',
               fontSize: { xs: '14px', sm: 'inherit' },
-              '&:hover': {
-                color: 'var(--clr-slate-600)',
-              },
             }}
           >
             <Box
@@ -199,9 +193,6 @@ const Navbar = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 1,
-                    '&:hover': {
-                      color: 'var(--clr-slate-600)',
-                    },
                   }}
                 >
                   <IconComponent size={20} />
@@ -240,8 +231,8 @@ const Navbar = () => {
                   return (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <IconComponent size={20} color="var(--clr-slate-600)" />
-                        <Typography sx={{ textAlign: 'center', color: 'var(--clr-slate-600)' }}>
+                        <IconComponent size={20} color="var(--clr-green-700)" />
+                        <Typography sx={{ textAlign: 'center', color: 'var(--clr-green-700)' }}>
                           {setting}
                         </Typography>
                       </Box>
@@ -250,7 +241,7 @@ const Navbar = () => {
                 })
               ) : (
                 <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center', color: 'var(--clr-slate-600)' }}>
+                  <Typography sx={{ textAlign: 'center', color: 'var(--clr-green-700)' }}>
                     Uloguj se ili se prijavi
                   </Typography>
                 </MenuItem>

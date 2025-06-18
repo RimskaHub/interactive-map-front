@@ -75,39 +75,48 @@
 @layer base {
   :root {
     --clr-white: hsl(0, 0%, 100%);
-    --clr-gray-100: hsl(0, 2%, 79%);
 
-    /* New green palette based on #5ec273 */
-    --clr-green-300: hsl(131, 45%, 75%);
-    --clr-green-400: hsl(131, 45%, 65%);
-    --clr-green-500: hsl(131, 45%, 58%); /* #5ec273 */
-    --clr-green-600: hsl(131, 45%, 48%);
-    --clr-green-700: hsl(131, 45%, 38%);
+    /* Brown palette */
+    --clr-brown-100: #f5f0eb;
+    --clr-brown-200: #e8d6c8;
+    --clr-brown-300: #d4b59e;
+    --clr-brown-400: #bf9474;
+    --clr-brown-500: #a67755;
+    --clr-brown-600: #8b4513;
+    --clr-brown-700: #6d3410;
+    --clr-brown-800: #4f250c;
+    --clr-brown-900: #321608;
 
-    /* New slate palette based on #2f4858 */
-    --clr-slate-400: hsl(207, 30%, 45%);
-    --clr-slate-500: hsl(207, 30%, 35%);
-    --clr-slate-600: hsl(207, 30%, 29%); /* #2f4858 */
-    --clr-slate-700: hsl(207, 30%, 23%);
-    --clr-slate-800: hsl(207, 30%, 18%);
-    --clr-slate-900: hsl(207, 30%, 13%);
+    /* Green palette */
+    --clr-green-100: #f2f4f0;
+    --clr-green-200: #e0e6dc;
+    --clr-green-300: #cdd7c5;
+    --clr-green-400: #bbc7ae;
+    --clr-green-500: #a9b388;
+    --clr-green-600: #8fa06f;
+    --clr-green-700: #758e56;
+    --clr-green-800: #5b6c42;
+    --clr-green-900: #3d4a2c;
 
-    /* Accent colors that complement the palette */
-    --clr-brand-300: hsl(131, 45%, 70%);
-    --clr-brand-400: hsl(131, 45%, 65%);
-    --clr-brand-500: hsl(131, 45%, 58%); /* Primary brand - matches green-500 */
-    --clr-brand-600: hsl(131, 45%, 48%);
-    --clr-brand-700: hsl(131, 45%, 38%);
+    /* Blue palette  */
+    --clr-blue-100: #f0f4ff;
+    --clr-blue-200: #dce7ff;
+    --clr-blue-300: #c5d7ff;
+    --clr-blue-400: #95b6f5;
+    --clr-blue-500: #6495ed;
+    --clr-blue-600: #4a7bd8;
+    --clr-blue-700: #3661c3;
+    --clr-blue-800: #2647ae;
+    --clr-blue-900: #1a3299;
 
     /* Accent colors for interactive elements */
-    --clr-accent-blue: hsl(210, 70%, 60%); /* Info/links */
-    --clr-accent-orange: hsl(25, 85%, 65%); /* Warnings/highlights */
-    --clr-accent-red: hsl(0, 70%, 60%); /* Errors/danger */
-    --clr-accent-yellow: hsl(45, 90%, 70%); /* Success alternative */
-    --clr-accent-purple: hsl(270, 50%, 65%); /* Special features */
+    --clr-accent-red: hsl(20, 84%, 38%);
+    --clr-accent-offwhite: #f8f9fa;
+    --clr-accent-mossGreen: #758e67;
 
     /* Neutral grays for better contrast */
     --clr-gray-50: hsl(207, 15%, 95%);
+    --clr-gray-100: hsl(0, 2%, 79%);
     --clr-gray-200: hsl(207, 10%, 85%);
     --clr-gray-300: hsl(207, 15%, 70%);
     --clr-gray-400: hsl(207, 20%, 55%);
@@ -137,10 +146,10 @@
   }
 
   :root {
-    --text-main: var(--clr-slate-600);
-    --text-high-contrast: var(--clr-white);
-    --text-brand: var(--clr-brand-500);
-    --text-brand-light: var(--clr-brand-400);
+    --text-main: var(--clr-accent-offwhite);
+    --text-high-contrast: var(--clr-brown-500);
+    --text-brand: var(--clr-green-500);
+    --text-brand-light: var(--clr-green-400);
 
     --font-size-heading-sm: var(--fs-700);
     --font-size-heading-regular: var(--fs-800);
@@ -172,7 +181,7 @@
   h3,
   h4 {
     font-family: var(--ff-heading);
-    color: var(--clr-slate-600);
+    color: var(--clr-white);
   }
 
   h1 {
@@ -180,12 +189,12 @@
   }
 
   a {
-    color: var(--clr-accent-blue);
+    color: var(--clr-blue-500);
   }
 
   a:hover,
   a:focus-visible {
-    color: var(--clr-brand-400);
+    color: var(--clr-blue-400);
   }
 }
 
@@ -195,10 +204,10 @@
   }
 
   .cluster-icon {
-    background-color: var(--clr-brand-500);
+    background-color: var(--clr-green-500);
     height: 2em;
     width: 2em;
-    color: var(--clr-slate-600);
+    color: var(--clr-brown-500);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,7 +219,7 @@
 
 @layer mui-components {
   .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-    border-color: var(--clr-slate-800) !important;
+    border-color: var(--clr-green-700) !important;
   }
 
   .MuiOutlinedInput-input {
@@ -218,11 +227,11 @@
   }
 
   .MuiInputLabel-root {
-    color: var(--clr-slate-600) !important;
+    color: var(--clr-green-500) !important;
   }
 
   .MuiInputLabel-root.Mui-focused {
-    color: var(--clr-slate-800) !important;
+    color: var(--clr-green-700) !important;
   }
 
   .MuiPickersToolbar-root {
@@ -230,17 +239,17 @@
   }
 
   .MuiPickersOutlinedInput {
-    color: var(--clr-slate-600);
+    color: var(--clr-green-500);
     border-radius: 4px;
     border-width: 1px;
-    border-color: var(--clr-slate-600);
-    border: 1px solid var(--clr-slate-600);
+    border-color: var(--clr-green-500);
+    border: 1px solid var(--clr-green-500);
   }
   .MuiPickersOutlinedInput-root.Mui-focused .MuiPickersOutlinedInput-notchedOutline {
-    border-color: var(--clr-brand-800) !important;
+    border-color: var(--clr-green-700) !important;
   }
 
   .MuiPickersOutlinedInput-root:hover .MuiPickersOutlinedInput-notchedOutline {
-    border-color: var(--clr-slate-800) !important;
+    border-color: var(--clr-green-700) !important;
   }
 }

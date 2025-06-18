@@ -17,7 +17,7 @@ export const Footer = () => {
     <Box
       component="footer"
       sx={{
-        bgcolor: 'var(--clr-brand-500)',
+        bgcolor: 'var(--clr-green-500)',
         color: 'white',
         py: { xs: 3, sm: 4 },
         mt: 'auto',
@@ -107,7 +107,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -121,7 +121,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -135,7 +135,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -149,7 +149,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -182,7 +182,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -196,7 +196,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -210,7 +210,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -224,7 +224,7 @@ export const Footer = () => {
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     color: 'white',
                     '&:hover': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-brown-500)',
                     },
                   }}
                 >
@@ -314,7 +314,7 @@ export const Footer = () => {
         <Divider
           sx={{
             my: { xs: 2, sm: 3 },
-            bgcolor: 'rgba(255, 255, 255, 0.2)',
+            bgcolor: '--clr-brown-400',
           }}
         />
 
@@ -355,7 +355,7 @@ export const Footer = () => {
                 fontSize: { xs: '0.875rem', sm: '1rem' },
                 color: 'white',
                 '&:hover': {
-                  color: 'var(--clr-slate-600)',
+                  color: 'var(--clr-brown-500)',
                 },
               }}
             >
@@ -369,7 +369,7 @@ export const Footer = () => {
                 fontSize: { xs: '0.875rem', sm: '1rem' },
                 color: 'white',
                 '&:hover': {
-                  color: 'var(--clr-slate-600)',
+                  color: 'var(--clr-brown-500)',
                 },
               }}
             >
@@ -383,7 +383,7 @@ export const Footer = () => {
                 fontSize: { xs: '0.875rem', sm: '1rem' },
                 color: 'white',
                 '&:hover': {
-                  color: 'var(--clr-slate-600)',
+                  color: 'var(--clr-brown-500)',
                 },
               }}
             >

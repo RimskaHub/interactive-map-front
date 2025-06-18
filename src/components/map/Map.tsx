@@ -53,7 +53,7 @@ const mockMarkers: { geocode: [number, number]; popupText: string }[] = [
 
 // transforming react in leaflet icon
 const customIcon = divIcon({
-  html: renderToString(<IoLocation size={30} color="var(--clr-slate-600)" />),
+  html: renderToString(<IoLocation size={30} color="var(--clr-green-500)" />),
   className: 'custom-div-icon',
   iconSize: [30, 30],
   iconAnchor: [15, 30],

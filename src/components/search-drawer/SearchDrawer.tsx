@@ -72,7 +72,7 @@ const SearchDrawer = () => {
                 display: 'flex',
                 fontFamily: 'var(--ff-heading)',
                 fontWeight: 700,
-                color: 'var(--clr-slate-600)',
+                color: 'var(--clr-green-700)',
               }}
             >
               Pretrazi
@@ -98,7 +98,7 @@ const SearchDrawer = () => {
                       padding: '8px 0',
                     },
                     '.MuiInputAdornment-root .MuiSvgIcon-root': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-green-700)',
                     },
                   }}
                   label="Pocetak putovanja"
@@ -113,7 +113,7 @@ const SearchDrawer = () => {
                       padding: '8px 0',
                     },
                     '.MuiInputAdornment-root .MuiSvgIcon-root': {
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-green-700)',
                     },
                   }}
                   label="Kraj putovanja"
@@ -128,9 +128,9 @@ const SearchDrawer = () => {
               type="submit"
               variant="contained"
               sx={{
-                backgroundColor: 'var(--clr-slate-600)',
+                backgroundColor: 'var(--clr-brown-500)',
                 '&:hover': {
-                  backgroundColor: 'var(--clr-slate-700)',
+                  backgroundColor: 'var(--clr-brown-700)',
                 },
               }}
             >

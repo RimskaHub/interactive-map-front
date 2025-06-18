@@ -86,12 +86,12 @@ const AutocompleteInput = ({ onChange }: IAutocompleteInputProps) => {
           {...props}
           key={option.title}
           style={{
-            borderBottom: index === 0 ? '1px solid var(--clr-slate-400)' : 'none',
+            borderBottom: index === 0 ? '1px solid var(--clr-green-400)' : 'none',
             paddingBottom: index === 0 ? '8px' : '6px',
             marginBottom: index === 0 ? '4px' : '0',
           }}
         >
-          <IoSearch size={20} color="var(--clr-slate-600)" style={{ marginRight: '8px' }} />
+          <IoSearch size={20} color="var(--clr-green-600)" style={{ marginRight: '8px' }} />
           {option.title}
         </li>
       )}
@@ -106,7 +106,7 @@ const AutocompleteInput = ({ onChange }: IAutocompleteInputProps) => {
                 padding: '0 8px',
               },
               startAdornment: (
-                <IoSearch size={20} color={'var(--clr-slate-600)'} style={{ marginRight: '8px' }} />
+                <IoSearch size={20} color={'var(--clr-green-600)'} style={{ marginRight: '8px' }} />
               ),
               endAdornment: (
                 <>

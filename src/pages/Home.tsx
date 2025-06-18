@@ -65,7 +65,7 @@ const Home = () => {
                   textShadow: '2px 2px 4px rgba(0,0,0,0.7)',
                 }}
               >
-                Dobrodošli na Interaktivnu Mapu
+                Dobrodošli na Omnimap
               </Typography>
               <Typography
                 variant="h5"
@@ -86,9 +86,9 @@ const Home = () => {
                   px: 4,
                   py: 1.5,
                   fontSize: '1.1rem',
-                  backgroundColor: 'primary.main',
+                  backgroundColor: 'var(--clr-brown-500)',
                   '&:hover': {
-                    backgroundColor: 'primary.dark',
+                    backgroundColor: 'var(--clr-brown-700)',
                   },
                 }}
               >

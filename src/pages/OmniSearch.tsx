@@ -110,15 +110,15 @@ const getTypeDisplayName = (type: string) => {
 const getTypeColor = (type: string) => {
   switch (type) {
     case 'location':
-      return 'var(--clr-brand-500)';
+      return 'var(--clr-lagoon-500)';
     case 'business':
-      return 'var(--clr-slate-600)';
+      return 'var(--clr-orange-600)';
     case 'person':
       return '#4caf50';
     case 'event':
       return '#ff9800';
     default:
-      return 'var(--clr-slate-600)';
+      return 'var(--clr-orange-600)';
   }
 };
 
@@ -127,15 +127,16 @@ const OmniSearch = () => {
     <MainLayout>
       <Container maxWidth="xl" sx={{ py: 4 }}>
         <Paper elevation={1} sx={{ p: 3, mb: 3 }}>
+          {' '}
           <Typography
             variant="h4"
             component="h1"
             gutterBottom
-            sx={{ color: 'var(--clr-brand-500)' }}
+            sx={{ color: 'var(--clr-lagoon-500)' }}
           >
             Rezultati pretrage
           </Typography>
-          <Typography variant="body1" color="var(--clr-slate-600)" sx={{ mb: 2 }}>
+          <Typography variant="body1" color="var(--clr-orange-600)" sx={{ mb: 2 }}>
             Pronađeno je {mockResults.length} rezultata na osnovu vaših nedavnih pretaga
           </Typography>
         </Paper>
@@ -165,7 +166,7 @@ const OmniSearch = () => {
                     boxShadow: 4,
                   },
                   cursor: 'pointer',
-                  border: `1px solid var(--clr-slate-600)`,
+                  border: `1px solid var(--clr-orange-600)`,
                 }}
               >
                 <CardMedia
@@ -194,8 +195,8 @@ const OmniSearch = () => {
                       variant="outlined"
                       size="small"
                       sx={{
-                        borderColor: 'var(--clr-slate-600)',
-                        color: 'var(--clr-slate-600)',
+                        borderColor: 'var(--clr-orange-600)',
+                        color: 'var(--clr-orange-600)',
                       }}
                     />
                   </Box>
@@ -209,7 +210,7 @@ const OmniSearch = () => {
                       overflow: 'hidden',
                       textOverflow: 'ellipsis',
                       whiteSpace: 'nowrap',
-                      color: 'var(--clr-brand-500)',
+                      color: 'var(--clr-lagoon-500)',
                     }}
                   >
                     {item.title}
@@ -223,7 +224,7 @@ const OmniSearch = () => {
                       WebkitLineClamp: 2,
                       WebkitBoxOrient: 'vertical',
                       overflow: 'hidden',
-                      color: 'var(--clr-slate-600)',
+                      color: 'var(--clr-orange-600)',
                     }}
                   >
                     {item.description}
@@ -241,7 +242,7 @@ const OmniSearch = () => {
                       sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        color: 'var(--clr-brand-500)',
+                        color: 'var(--clr-lagoon-500)',
                         gap: 0.5,
                       }}
                     >
