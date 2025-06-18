@@ -2,7 +2,7 @@ import { Box, Typography, Card, CardContent, Chip } from '@mui/material';
 
 import { Link } from 'react-router';
 
-interface DestinationCardProps {
+export interface DestinationCardProps {
   cityName: string;
   backgroundImage: string;
   trailCount: number;
