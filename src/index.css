@@ -33,7 +33,7 @@
   }
 
   body {
-    min-block-size: 100vh;
+    min-block-size: 100vh !important;
     line-height: 1.6;
   }
 
@@ -55,13 +55,13 @@
 
   p,
   li {
-    text-wrap: pretty;
+    text-wrap: pretty !important;
   }
 
   img,
   picture {
-    max-inline-size: 100%;
-    display: block;
+    max-inline-size: 100% !important;
+    display: block !important;
   }
 
   input,

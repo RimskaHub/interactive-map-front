@@ -1,5 +1,7 @@
 import { Box, Typography, Card, CardContent, Chip } from '@mui/material';
 
+import { Link } from 'react-router';
+
 interface DestinationCardProps {
   cityName: string;
   backgroundImage: string;
@@ -8,51 +10,53 @@ interface DestinationCardProps {
 
 const DestinationCard = ({ cityName, backgroundImage, trailCount }: DestinationCardProps) => {
   return (
-    <Card
-      sx={{
-        height: 300,
-        position: 'relative',
-        backgroundImage: `linear-gradient(to top, rgba(117, 142, 86, 0.3), rgba(0, 53, 89, 0)), url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        color: 'white',
-        cursor: 'pointer',
-        boxShadow: 2,
-      }}
-    >
-      <CardContent
+    <Link to={'/omnisearch'} style={{ textDecoration: 'none' }}>
+      <Card
         sx={{
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          padding: 2,
+          height: 300,
+          position: 'relative',
+          backgroundImage: `linear-gradient(to top, rgba(117, 142, 86, 0.3), rgba(0, 53, 89, 0)), url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          color: 'white',
+          cursor: 'pointer',
+          boxShadow: 2,
         }}
       >
-        <Typography
-          variant="h5"
-          component="h3"
+        <CardContent
           sx={{
-            fontWeight: 'bold',
-            textAlign: 'center',
-            textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            padding: 2,
           }}
         >
-          {cityName}
-        </Typography>
-
-        <Box sx={{ alignSelf: 'flex-start' }}>
-          <Chip
-            label={`${trailCount} staza`}
+          <Typography
+            variant="h5"
+            component="h3"
             sx={{
-              backgroundColor: 'var(--clr-brown-500)',
-              color: 'var(--clr-white)',
-              fontFamily: 'var(--ff-body)',
+              fontWeight: 'bold',
+              textAlign: 'center',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
             }}
-          />
-        </Box>
-      </CardContent>
-    </Card>
+          >
+            {cityName}
+          </Typography>
+
+          <Box sx={{ alignSelf: 'flex-start' }}>
+            <Chip
+              label={`${trailCount} staza`}
+              sx={{
+                backgroundColor: 'var(--clr-brown-500)',
+                color: 'var(--clr-white)',
+                fontFamily: 'var(--ff-body)',
+              }}
+            />
+          </Box>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 
