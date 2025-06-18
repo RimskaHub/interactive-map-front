@@ -9,7 +9,7 @@ import { DesktopDatePicker } from '@mui/x-date-pickers';
 import type { PickerValue } from '@mui/x-date-pickers/internals';
 import Typography from '@mui/material/Typography';
 
-import AutocompleteInput from '@/components/form/autocomplete/AutocompleteInput';
+import AutocompleteInput from '@/components/common/form/autocomplete/AutocompleteInput';
 
 import type { IRecentSearch } from '@/types/index';
 import { useSearchDrawerContext } from '@/contexts/SearchDrawerContext';

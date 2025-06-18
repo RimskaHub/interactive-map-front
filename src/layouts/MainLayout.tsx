@@ -1,6 +1,6 @@
-import Navbar from '@/components/navbar/Navbar';
-import { Footer } from '@/components/footer/Footer';
-import SearchDrawer from '@/components/search-drawer/SearchDrawer';
+import Navbar from '@/components/common/navbar/Navbar';
+import { Footer } from '@/components/common//footer/Footer';
+import SearchDrawer from '@/components/common//search-drawer/SearchDrawer';
 
 const MainLayout = ({ children }: any) => {
   return (
